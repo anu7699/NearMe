@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NearMe</string>
+    <string name="type">hospital</string>
+    <string name="register">REGISTER WITH US</string>
+    <string name="login">LOGIN</string>
+    <string name="label">NEAR_ME</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="settings_menu_item">Settings</string>
+</resources>
