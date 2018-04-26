@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -75,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                 mAuth.signInWithEmailAndPassword(email_text,pass_text).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressBar.setVisibility(View.GONE);
+
                         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                         if(task.isSuccessful()){
                             //start the profile activity
@@ -91,6 +92,8 @@ public class LoginActivity extends AppCompatActivity {
                                     i.putExtra("email", user.getEmail());
                                     i.putExtra("phone number", user.getPhone());
                                     i.putExtra("password", user.getPassword());
+                                    Log.d("LoginActivity::",user.getUsername()+" "+user.getEmail());
+                                    progressBar.setVisibility(View.GONE);
                                     finish();
                                     startActivity(i);
                                 }
@@ -106,9 +109,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
                         }
-                        else
-                            Toast.makeText(getApplicationContext(),"Incorrect email or password",Toast.LENGTH_LONG).show();
-
+                        else {
+                            progressBar.setVisibility(View.GONE);
+                            Toast.makeText(getApplicationContext(), "Incorrect email or password", Toast.LENGTH_LONG).show();
+                        }
 
                     }
                 });

@@ -2,7 +2,6 @@ package com.wink.anu.nearme;
 
 import android.util.Log;
 
-import com.google.android.gms.location.places.Place;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -19,17 +18,11 @@ import java.util.List;
 
 public class PlaceService {
     //private static  String API_KEY;
-    public static final String API_KEY="AIzaSyC-pjXjDJMpscgPFBkEj7Xc-kBy812CB78 ";
+    private static final String API_KEY="AIzaSyC-pjXjDJMpscgPFBkEj7Xc-kBy812CB78 ";
 
-   /* public PlaceService(String api_key)
-    {
-        this.API_KEY=api_key;
-    }
-    public void setApiKey(String api_key)
-    {
-        this.API_KEY=api_key;
-    }*/
-    public static List<com.wink.anu.nearme.Place> findPlaces(double longitude, double latitude, String placeSpecified)
+
+    //method that returns the list of places of a given type near the current location
+  public static List<com.wink.anu.nearme.Place> findPlaces(double longitude, double latitude, String placeSpecified)
     {
         String urlString =QueryUtils.makeUrl(longitude,latitude,placeSpecified,API_KEY);
         try{

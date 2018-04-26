@@ -1,9 +1,16 @@
 <resources>
     <string name="app_name">NearMe</string>
     <string name="type">hospital</string>
-    <string name="register">REGISTER WITH US</string>
+    <string name="register">Not having an account? Register here..</string>
     <string name="login">LOGIN</string>
     <string name="label">NEAR_ME</string>
     <string name="menu_refresh">Refresh</string>
     <string name="settings_menu_item">Settings</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="empty_view_title_text">Nothing to display..</string>
+    <string name="empty_view_text">Please refresh in order to see hospitals NEAR_ME.Make sure you have allowed LOCATION ACCESS. Go to Settings->Permissions to check</string>
+    <string name="no_internet_conn">No Internet Connection!</string>
+    <string name="review_default">This place has not been reviewed yet.</string>
+
 </resources>

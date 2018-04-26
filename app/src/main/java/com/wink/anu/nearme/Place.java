@@ -1,18 +1,22 @@
 package com.wink.anu.nearme;
 
+import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class Place {
+public class Place implements Serializable {
     private String id;
     private String icon;
     private String name;
     private String vicinity;
     private Double latitude;
     private Double longitude;
+    private float rating;
+
+    public float getRating(){return rating;}
 
     public String getId() {
         return id;
@@ -61,6 +65,10 @@ public class Place {
     public void setVicinity(String vicinity) {
         this.vicinity = vicinity;
     }
+    public void setRating(float num)
+    {
+        this.rating=num;
+    }
 
     static Place jsonToPontoReferencia(JSONObject pontoReferencia) {
         try {
@@ -73,6 +81,11 @@ public class Place {
             result.setName(pontoReferencia.getString("name"));
             result.setVicinity(pontoReferencia.getString("vicinity"));
             result.setId(pontoReferencia.getString("id"));
+            if(pontoReferencia.has("rating"))
+                result.setRating((float) pontoReferencia.getDouble("rating"));
+            else
+                result.setRating(0);
+
             return result;
         } catch (JSONException ex) {
             Logger.getLogger(Place.class.getName()).log(Level.SEVERE, null, ex);

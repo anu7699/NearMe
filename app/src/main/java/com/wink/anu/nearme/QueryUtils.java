@@ -18,6 +18,8 @@ class QueryUtils {
     private static final String LOG_TAG ="QueryUtils" ;
 
 
+
+    //to create url for the query with given longitude and latitude
     public static String makeUrl(double longitude, double latitude, String placeSpecified,String API_KEY) {
         Uri baseUri=Uri.parse(PLACES_REQUEST_URL);
         StringBuilder location=new StringBuilder("");
@@ -37,6 +39,8 @@ class QueryUtils {
 
     }
 
+
+
     public static URL getUrlContents(String urlString) {
         try {
             URL url=new URL(urlString);
@@ -47,6 +51,8 @@ class QueryUtils {
         }
     }
 
+
+    //to establish network connection by making http request
     public static String makeHttpConn(URL url)throws IOException {
         String JSON_resp="";
         if(url==null)
@@ -80,6 +86,8 @@ class QueryUtils {
         return JSON_resp;
     }
 
+
+    //to read from input stream
     private static String readFromStream(InputStream is) throws IOException {
         StringBuilder output=new StringBuilder();
         if(is!=null) {

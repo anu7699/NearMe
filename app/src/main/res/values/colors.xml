@@ -8,4 +8,5 @@
     <color name="bg_tint">#FFE0B2</color>
     <color name="light_grey">#cccccc</color>
     <color name="address_color">#546E7A</color>
+    <color name="white">#FFFFFF</color>
 </resources>
